@@ -1,0 +1,56 @@
+//==============================================================================
+// Keep the defaults styles AS SHORT AS POSSIBLE.
+// They are going to be inlined in the <head>.
+//
+// All styles shared by custom components (written adhoc for this app) can be
+// put in shared-styles.scss
+//==============================================================================
+
+%text-bold {
+  @include font-weight-bold;
+}
+
+html {
+  font-size: 16px;
+}
+
+.body {
+  @include font-weight-normal;
+
+  font-family: $primary-font-family;
+  font-size: 16px;
+
+  color: palette(app, text-primary);
+
+  // Remove 300ms delay on Windows Mobile.
+  // Ref: http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+h1 {
+  @extend %text-bold;
+  @include font-size-xx-large;
+}
+
+h2 {
+  @extend %text-bold;
+  @include font-size-x-large;
+}
+
+h3 {
+  @extend %text-bold;
+  @include font-size-large;
+}
+
+.text-body-small {
+  @include font-size-small;
+}
+
+.responsive-header {
+  @include responsive-font-size(
+    $mobile: $font-size-regular,
+    $tablet: $font-size-x-large,
+    $desktop: $font-size-xx-large
+  );
+}

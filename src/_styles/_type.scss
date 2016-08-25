@@ -1,0 +1,187 @@
+//==============================================================================
+// Base typography rules and mixins, available to all SASS files.
+//
+// - font-family settings
+// - font-sizes palette
+// - font-weight mixins
+// - responsive font-size mixin
+// - utility functions: ellipsis, image-replacement
+//
+//==============================================================================
+
+// Font families.
+$primary-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$secondary-font-family: 'Open Sans' Helvetica, Arial, sans-serif;
+$tertiary-font-family: Arial, sans-serif;
+
+
+// Font weight variables.
+$font-weight-thin: 200;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font size variables.
+$font-size-x-small: 10;
+$font-size-small: 12;
+$font-size-regular: 14;
+$font-size-large: 15;
+$font-size-x-large: 16;
+$font-size-xx-large: 24;
+$font-size-xxx-large: 33;
+
+
+// Font weights.
+@mixin font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+@mixin font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-weight-normal {
+  font-weight: $font-weight-normal;
+}
+
+@mixin font-weight-thin {
+  font-weight: $font-weight-thin;
+}
+
+
+// Font sizes
+@mixin font-size-x-small {
+  font-size: rem($font-size-x-small);
+}
+
+@mixin font-size-small {
+  font-size: rem($font-size-small);
+}
+
+@mixin font-size-regular {
+  font-size: rem($font-size-regular);
+}
+
+@mixin font-size-large {
+  font-size: rem($font-size-large);
+}
+
+@mixin font-size-x-large {
+  font-size: rem($font-size-x-large);
+}
+
+@mixin font-size-xx-large {
+  font-size: rem($font-size-xx-large);
+}
+
+@mixin font-size-xxx-large {
+  font-size: rem($font-size-xxx-large);
+}
+
+
+
+// Pass font sizes to set a responsive size, e.g:
+// @include responsive-font-size($mobile: $font-size-small, $desktop: $font-size-large);
+@mixin responsive-font-size($mobile: null, $phablet: null, $tablet: null, $desktop: null, $desktop-large: null) {
+  @if ($mobile) {
+    font-size: rem($mobile);
+  }
+
+  @if ($phablet) {
+    @media #{$mq-tablet-small-up} {
+      font-size: rem($phablet);
+    }
+  }
+
+  @if ($tablet) {
+    @media #{$mq-tablet-large-up} {
+      font-size: rem($tablet);
+    }
+  }
+
+  @if ($desktop) {
+    @media #{$mq-desktop-small-up} {
+      font-size: rem($desktop);
+    }
+  }
+
+  @if ($desktop-large) {
+    @media #{$mq-desktop-large-up} {
+      font-size: rem($desktop-large);
+    }
+  }
+}
+
+
+// Utils
+
+// Add an ellipsis to overflowing text
+@mixin ellipsis($width: 100%) {
+  display: inline-block;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+
+@mixin image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+$font-arial:          Arial, sans-serif;
+$font-roboto:         Roboto, $font-arial;
+
+// Classes to be extended.
+%font-roboto {
+  font-family: $font-roboto;
+}
+
+%font-roboto-light {
+  @extend %font-roboto;
+  font-weight: 300;
+}
+
+%font-roboto-regular {
+  @extend %font-roboto;
+  font-weight: 400;
+}
+
+%font-roboto-medium {
+  @extend %font-roboto;
+  font-weight: 500;
+}
+
+%font-roboto-bold {
+  @extend %font-roboto;
+  font-weight: 700;
+}
+
+%typography-header {
+  @extend %font-roboto-bold;
+  @include font-size-x-large();
+}
+
+%typography-title {
+  @extend %font-roboto-bold;
+  @include font-size-large();
+}
+
+%typography-subtitle {
+  @extend %font-roboto-medium;
+  @include font-size-regular();
+}
+
+%typography-body {
+  @extend %font-roboto-regular;
+  @include font-size-regular();
+}
+
+%typography-footer {
+  @extend %font-roboto-regular;
+  @include font-size-regular();
+}

@@ -1,0 +1,8 @@
+{
+  "preset": "google",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "disallowTrailingWhitespace": null,
+  "validateIndentation": null,
+  "maximumLineLength": 80,
+  "excludeFiles": ["node_modules/**", "src/_scripts/cache-polyfill.js"]
+}
