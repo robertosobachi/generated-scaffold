@@ -32,13 +32,13 @@ body
   block scripts
     script(src= baseUrl + 'scripts/main.js')
 
-  script.
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(function() {
-          console.log("Service Worker Registered");
-        });
-    }
+  //- script.
+  //-   if('serviceWorker' in navigator) {
+  //-     navigator.serviceWorker
+  //-       .register('/sw.js')
+  //-       .then(function() {
+  //-         console.log("Service Worker Registered");
+  //-       });
+  //-   }
 
 </html>

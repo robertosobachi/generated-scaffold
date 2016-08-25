@@ -37,31 +37,13 @@ $_base-colors: (
 
   ),
 
-  pink: (
-    base:             #ffab91,
-  ),
-
   footer: (
     social:           #454545,
     legal:            #3f4040,
   )
 );
 
-// Theme
-$_theme-colors: (
-  app: (
-    primary:         map-get(map-get($_base-colors, yellow), light-1),
-
-    text-primary:    map-get(map-get($_base-colors, gray), base),
-    text-secondary:  map-get(map-get($_base-colors, blue), medium),
-    text-light:      map-get(map-get($_base-colors, gray), white),
-
-    drawer-content-bg: map-get(map-get($_base-colors, yellow), light-2),
-  )
-);
-
-$app-colors: map-merge($_base-colors, $_theme-colors);
-
+$app-colors: $_base-colors;
 
 
 // Get a color from the $app-colors palette defined in _colors.scss

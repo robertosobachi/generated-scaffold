@@ -1,0 +1,8 @@
+mixin webp(imageProp)
+  - imageProp = imageProp || {}
+  - imageProp.webpImg = imageProp.webpImg || ''
+  - imageProp.fallbackImg = imageProp.fallbackImg || ''
+
+  picture
+    source(srcset=imageProp.webpImg 1x type=image/webp)
+    img(src=imageProp.fallbackImg)

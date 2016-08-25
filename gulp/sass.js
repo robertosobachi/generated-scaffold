@@ -25,7 +25,7 @@ module.exports = function(gulp, plugins, args, config, taskTarget, browserSync) 
   gulp.task('sass', function() {
     gulp.src(path.join(dirs.source, dirs.styles, entries.css))
       .pipe(plugins.plumber())
-      .pipe(plugins.sourcemaps.init())
+      // .pipe(plugins.sourcemaps.init())
       .pipe(plugins.sass({
         outputStyle: 'expanded',
         precision: 10,
@@ -45,7 +45,7 @@ module.exports = function(gulp, plugins, args, config, taskTarget, browserSync) 
         filepath.dirname = filepath.dirname.replace(dirs.source, '').replace('_', '');
       }))
       .pipe(gulpif(args.production, plugins.cssnano({rebase: false})))
-      .pipe(plugins.sourcemaps.write('./'))
+      // .pipe(plugins.sourcemaps.write('./'))
       .pipe(gulp.dest(dest))
       .pipe(browserSync.stream({match: '**/*.css'}));
   });

@@ -1,0 +1,19 @@
+
+header {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+}
+
+.logo {
+  flex: auto;
+}
+
+nav {
+  flex: auto;
+
+  margin-left: auto;
+}

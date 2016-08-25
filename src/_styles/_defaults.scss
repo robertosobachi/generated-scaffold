@@ -14,13 +14,15 @@ html {
   font-size: 16px;
 }
 
-.body {
+body {
   @include font-weight-normal;
 
   font-family: $primary-font-family;
   font-size: 16px;
 
-  color: palette(app, text-primary);
+  color: palette(gray, white);
+
+  background: palette(gray, black);
 
   // Remove 300ms delay on Windows Mobile.
   // Ref: http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away

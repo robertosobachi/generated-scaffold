@@ -3,13 +3,44 @@
 
 'use strict';
 
-var swiper = require('swiper');
+/**
+* My JavaScript application
+*
+* @module Application
+*/
 
-var Link = require('../_modules/link/link');
+/** @namespace Namespace for Application classes and functions. */
+var greenLight = greenLight || {};
 
-new Link(); // Activate Link modules logic
 
+/**
+* Constructs Application
+*
+* @constructor
+*/
+greenLight.Application = function() {
 
-function hello() {
+  // swiper - iDangerous plugin.
+  this.swiper = require('swiper');
 
-}
+  // link
+  this.linkModule = require('../_modules/link/link');
+
+  // carousel
+  this.carouselModule = require('../_modules/carousel/carousel');
+
+};
+
+/** Initialise Application. */
+greenLight.Application.prototype.init = function () {
+
+  new this.linkModule(); // Activate Link modules logic
+
+  new this.carouselModule(); // Activate Link modules logic
+
+};
+
+(function() {
+  var app = new greenLight.Application();
+  app.init();
+})();
