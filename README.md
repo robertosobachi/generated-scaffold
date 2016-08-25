@@ -22,6 +22,7 @@ Markup
 
 Optimization
 - [Imagemin](https://github.com/imagemin/imagemin)
+- [Webp](https://www.npmjs.com/package/gulp-webp)
 - [Uglify](https://github.com/mishoo/UglifyJS)
 
 Server
