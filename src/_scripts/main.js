@@ -11,10 +11,10 @@ var myApp = myApp || {};
 // var linkModule = require('../_modules/link/link');
 
 // carousel
-var carouselModule = require('../_modules/carousel/carousel');
+var CarouselModule = require('../_modules/carousel/carousel');
 
 // carousel
-var webpModule = require('../_modules/webp/webp');
+var WebpModule = require('../_modules/webp/webp');
 
 
 /**
@@ -28,7 +28,7 @@ myApp.Application = function() {
   // this.linkModule = new LinkModule();
 
   // Activate Carousel modules logic
-  this.carouselModule = new carouselModule();
+  this.carouselModule = new CarouselModule();
 
 };
 

@@ -1,0 +1,25 @@
+
+
+.social {
+  text-align: right;
+}
+
+
+.social__icon {
+
+  display: inline-block;
+
+  margin-left: rem(10);
+
+  svg {
+    display: block;
+
+    width: rem(25);
+    height: rem(25);
+  }
+
+}
+
+.twitter__icon__path {
+  fill: palette(gray, white);
+}

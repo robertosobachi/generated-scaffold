@@ -5,15 +5,16 @@
 
   flex-direction: row;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   list-style-type: none;
 
   &__link {
 
+    margin-left: rem(20);
+
     text-transform: uppercase;
 
   }
-
 
 }

@@ -11,15 +11,14 @@
 }
 
 html {
-  font-size: 16px;
+  @include font-size-regular();
 }
 
 body {
   @include font-weight-normal;
+  @include font-size-regular();
 
   font-family: $primary-font-family;
-
-  @include font-size-regular();
 
   color: palette(gray, white);
 
@@ -59,7 +58,9 @@ h3 {
 }
 
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   color: palette(gray, white);
 
   text-decoration: none;

@@ -6,14 +6,17 @@ header {
   flex-flow: row wrap;
   justify-content: space-between;
 
+  padding: rem(30) 0;
+
 }
 
 .logo {
   flex: auto;
 }
 
-nav {
+.links__wrapper {
   flex: auto;
 
   margin-left: auto;
+
 }
