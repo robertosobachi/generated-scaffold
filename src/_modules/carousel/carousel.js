@@ -1,8 +1,20 @@
 'use strict';
 
+var myApp = myApp || { Carousel: {} };
+
 // Constructor
-var Carousel = function() {
+myApp.Carousel = function() {
+
+  // swiper - iDangerous plugin.
+  this.swiperCtrl = require('swiper');
 
 };
 
-module.exports = Carousel;
+/** Initialise Module. */
+myApp.Carousel.prototype.init = function() {
+
+  console.log('Init Carousel');
+
+};
+
+module.exports = myApp.Carousel;

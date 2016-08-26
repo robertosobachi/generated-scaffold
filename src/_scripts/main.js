@@ -3,14 +3,18 @@
 
 'use strict';
 
-/**
-* My JavaScript application
-*
-* @module Application
-*/
-
 /** @namespace Namespace for Application classes and functions. */
-var greenLight = greenLight || {};
+var myApp = myApp || {};
+
+
+// link
+// var linkModule = require('../_modules/link/link');
+
+// carousel
+var carouselModule = require('../_modules/carousel/carousel');
+
+// carousel
+var webpModule = require('../_modules/webp/webp');
 
 
 /**
@@ -18,29 +22,24 @@ var greenLight = greenLight || {};
 *
 * @constructor
 */
-greenLight.Application = function() {
+myApp.Application = function() {
 
-  // swiper - iDangerous plugin.
-  this.swiper = require('swiper');
+  // Activate Link modules logic
+  // this.linkModule = new LinkModule();
 
-  // link
-  this.linkModule = require('../_modules/link/link');
-
-  // carousel
-  this.carouselModule = require('../_modules/carousel/carousel');
+  // Activate Carousel modules logic
+  this.carouselModule = new carouselModule();
 
 };
 
 /** Initialise Application. */
-greenLight.Application.prototype.init = function () {
+myApp.Application.prototype.init = function () {
 
-  new this.linkModule(); // Activate Link modules logic
-
-  new this.carouselModule(); // Activate Link modules logic
+  this.carouselModule.init();
 
 };
 
 (function() {
-  var app = new greenLight.Application();
+  var app = new myApp.Application();
   app.init();
 })();

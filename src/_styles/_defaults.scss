@@ -18,7 +18,8 @@ body {
   @include font-weight-normal;
 
   font-family: $primary-font-family;
-  font-size: 16px;
+
+  @include font-size-regular();
 
   color: palette(gray, white);
 
@@ -55,4 +56,11 @@ h3 {
     $tablet: $font-size-x-large,
     $desktop: $font-size-xx-large
   );
+}
+
+
+a, a:link, a:visited {
+  color: palette(gray, white);
+
+  text-decoration: none;
 }
